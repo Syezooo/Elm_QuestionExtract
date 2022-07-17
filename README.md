@@ -78,7 +78,9 @@ def Options():
 ```
 スクリプト実行例
 
-`$ python3 /workspace/src/trim.py --outtype pdf --img_path /workspace/results/img/ --privacy OFF`
+```
+$ python3 /workspace/src/trim.py --outtype pdf --img_path /workspace/results/img/ --privacy OFF
+```
 
 標準出力（上記スクリプト実行時）
 ```
