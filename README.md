@@ -28,7 +28,7 @@
 ---
 
 ## 実装方法
-<h5>1. dockerコンテナを読み込み（環境構築）</h5>
+### 1. dockerコンテナを読み込み（環境構築）
 
 `$ docker pull nvcr.io/nvidia/pytorch:22.06-py3`
 
@@ -36,7 +36,7 @@
 
 ※pytorchは絶対要らないけど大体のことができるコンテナなので利用
 
-<h5>2. data/にトリミングしたいアンケートのpdfファイルを格納し、ページごとに画像として分割</h5>
+### 2. data/にトリミングしたいアンケートのpdfファイルを格納し、ページごとに画像として分割
 
 `$ apt-get update`
 
@@ -45,7 +45,7 @@
 `$ pdftoppm -png <input.pdf> /workspace/results/img/`
 
 
-<h5>3. src/trim.pyの30行目以降でトリミング領域を指定</h5>
+### 3. src/trim.pyの30行目以降でトリミング領域を指定
 ```python
 # 保存先パスとトリミング位置（アンケートごとに変わる）を指定
     ### q1（1曲目）###
@@ -65,7 +65,7 @@
         trim_question(img_path, save_path_q5, 0, 1180, 1074, 1520, outtype)
 ```
 
-<h5>4. src/trim.pyのoptions詳細を指定しながらスクリプト実行</h5>
+### 4. src/trim.pyのoptions詳細を指定しながらスクリプト実行
 ```python
 # オプション指定
 def Options():
