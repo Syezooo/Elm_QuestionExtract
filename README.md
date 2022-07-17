@@ -30,19 +30,20 @@
 # 1. 実装方法
 #### 1.1. dockerコンテナを読み込み（環境構築）
 
-`$ docker pull nvcr.io/nvidia/pytorch:22.06-py3`
-
-`$ docker run --gpus "device=0" -it --rm --name [任意のコンテナ名] -v $PWD:/workspace/ -w /workspace/ nvcr.io/nvidia/pytorch:22.06-py3`
+```
+$ docker pull nvcr.io/nvidia/pytorch:22.06-py3
+$ docker run --gpus "device=0" -it --rm --name [任意のコンテナ名] -v $PWD:/workspace/ -w /workspace/ nvcr.io/nvidia/pytorch:22.06-py3
+```
 
 ※pytorchは絶対要らないけど大体のことができるコンテナなので利用
 
 #### 1.2. data/にトリミングしたいアンケートのpdfファイルを格納し、ページごとに画像として分割
 
-`$ apt-get update`
-
-`$ apt-get install poppler-utils`
-
-`$ pdftoppm -png <input.pdf> /workspace/results/img/`
+```
+$ apt-get update
+$ apt-get install poppler-utils
+$ pdftoppm -png <input.pdf> /workspace/results/img/
+```
 
 
 #### 1.3. src/trim.pyの30行目以降でトリミング領域を指定
